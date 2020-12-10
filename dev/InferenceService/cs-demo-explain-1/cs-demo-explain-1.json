@@ -1,0 +1,26 @@
+{
+    "kind": "InferenceService",
+    "apiVersion": "serving.kubeflow.org/v1alpha2",
+    "metadata": {
+        "name": "cs-demo-explain-1",
+        "namespace": "dev",
+        "creationTimestamp": null,
+        "labels": {
+            "fluentd": "true"
+        }
+    },
+    "spec": {
+        "default": {
+            "predictor": {
+                "tensorflow": {
+                    "storageUri": "gs://seldon-models/tfserving/cifar10/resnet32",
+                    "resources": {}
+                },
+                "logger": {
+                    "mode": "all"
+                }
+            }
+        }
+    },
+    "status": {}
+}
